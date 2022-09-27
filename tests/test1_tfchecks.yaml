@@ -9,7 +9,7 @@ checks:
       - resource
     requiredLabels:
       - "*"
-    severity: LOW
+    # severity: LOW
     matchSpec:
       action: and
       predicateMatchSpec:
