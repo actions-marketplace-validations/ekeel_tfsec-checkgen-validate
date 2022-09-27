@@ -17,3 +17,7 @@ jobs:
         name: Action Test
         with:
           custom_checks_directory: tests/
+
+      - name: Echo Output
+        run: |
+          echo "Custom Checks are Valid: ${{ steps.action_test.outputs.custom_checks_valid }}"
