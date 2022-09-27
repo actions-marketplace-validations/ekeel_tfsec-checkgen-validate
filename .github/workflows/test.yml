@@ -1,0 +1,19 @@
+name: Test tfsec-checkgen-validate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test
+    runs-on: [Linux]
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: ./
+        id: action_test
+        name: Action Test
+        with:
+          custom_checks_directory: tests/

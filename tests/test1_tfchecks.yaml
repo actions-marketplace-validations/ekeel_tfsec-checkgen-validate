@@ -1,0 +1,26 @@
+---
+checks:
+  - code: TAGS0001
+    description: Custom check to ensure that required tags exist for all resources.
+    errorMessage: Required tags are missing.
+    impact: By not having the required tags, stuff could happen.
+    resolution: "Add the tags."
+    requiredTypes:
+      - resource
+    requiredLabels:
+      - "*"
+    severity: LOW
+    matchSpec:
+      action: and
+      predicateMatchSpec:
+        - name: tags
+          action: contains
+          value: Tag1
+
+        - name: tags
+          action: contains
+          value: Tag2
+
+        - name: tags
+          action: contains
+          value: Tag3

@@ -4,7 +4,7 @@ set -e
 
 custom_checks_valid=true
 
-for i in $(find . -type f -regex ".*_tfchecks\.yaml"); do
+for i in $(find $1 -type f -regex ".*_tfchecks\.yaml"); do
   res=$(tfsec-checkgen validate $i)
   if [ "$res" != "Config is valid" ]; then
 		custom_checks_valid=false

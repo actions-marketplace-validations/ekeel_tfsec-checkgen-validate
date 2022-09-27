@@ -2,6 +2,11 @@ name: tfsec-checkgen-validate
 description: Run tfsec-checkgen validate.
 
 inputs:
+  custom_checks_directory:
+    description: The directory containing your custom checks.
+    required: false
+    default: ./
+
   tfsec_version:
     description: The tfsec version to download.
     required: false
@@ -9,10 +14,10 @@ inputs:
 
 outputs:
   custom_checks_valid:
-    description: States if the custom checks are valid.
+    description: Are the custom checks are valid.
 
 runs:
   using: docker
   image: dockerfile
   args:
-    - ${{ inputs.tfsec_version }}
+    - ${{ inputs.custom_checks_directory }}

@@ -1,6 +1,6 @@
 FROM alpine:3.16.2
 
-ENV tfsec_version=1.28.0
+ARG tfsec_version=1.28.0
 
 COPY entrypoint.sh /entrypoint.sh
 
